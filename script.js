@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentTrackIndex < audioFiles.length - 1) {
             playTrack(currentTrackIndex + 1);
         } else {
-            playTrack(0); // 一曲目に戻る
+            playTrack(0); // Go back to the first track
         }
     });
 
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentTrackIndex < audioFiles.length - 1) {
             playTrack(currentTrackIndex + 1);
         } else {
-            playTrack(0); // 一曲目に戻る
+            playTrack(0); // Go back to the first track
         }
     });
 });
