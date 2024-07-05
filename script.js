@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
             dragHandle.className = 'drag-handle';
 
             const fileName = document.createElement('span');
-            fileName.textContent = `${index + 1}. ${file.name}`;
+            const displayName = file.name.replace(/\.mp3$/i, ''); // Remove .mp3 extension
+            fileName.textContent = `${index + 1}. ${displayName}`;
             fileName.addEventListener('click', () => {
                 playTrack(index);
             });
