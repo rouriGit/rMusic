@@ -58,6 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const listItem = document.createElement('div');
             listItem.className = 'file-item';
 
+            const dragHandle = document.createElement('span');
+            dragHandle.textContent = '︙';
+            dragHandle.className = 'drag-handle';
+
             const fileName = document.createElement('span');
             fileName.textContent = `${index + 1}. ${file.name}`;
             fileName.addEventListener('click', () => {
@@ -72,9 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 removeTrack(index);
             });
 
+            listItem.appendChild(dragHandle);
             listItem.appendChild(fileName);
             listItem.appendChild(deleteButton);
             fileList.appendChild(listItem);
+        });
+
+        new Sortable(fileList, {
+            handle: '.drag-handle',
+            animation: 150,
+            onEnd: function (evt) {
+                const [movedItem] = audioFiles.splice(evt.oldIndex, 1);
+                audioFiles.splice(evt.newIndex, 0, movedItem);
+                displayFileList();
+            }
         });
     }
 
