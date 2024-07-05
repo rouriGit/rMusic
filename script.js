@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let audioFiles = [];
     let currentTrackIndex = 0;
-    const maxFiles = 10;
+    const maxFiles = 20;
 
     // Fetch MP3 files from rFolder directory
     fetchMp3Files();
@@ -25,7 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
             '泣き地蔵.mp3', 
             '置き手紙.mp3', 
             '蝶々結び.mp3', 
-            '裸の勇者.mp3']; // List of files in rFolder
+            '裸の勇者.mp3',
+            'High Land.mp3',
+            'Ghost.mp3',
+            'HANABI.mp3'
+        ]; // List of files in rFolder
         audioFiles = rFolderFiles.map(file => ({
             name: file,
             url: `./rFolder/${file}`
