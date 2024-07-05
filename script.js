@@ -10,10 +10,36 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentTrackIndex = 0;
     const maxFiles = 10;
 
+    // Fetch MP3 files from rFolder directory
+    fetchMp3Files();
+
+    function fetchMp3Files() {
+        // Simulating fetching from rFolder (replace with actual server-side fetching logic if applicable)
+        const rFolderFiles = [
+            'Love Song-Uru.mp3', 
+            'We Found Love-Rihanna.mp3', 
+            'Dragon Night.mp3', 
+            'Stick Figure.mp3', 
+            'Wasted Nights.mp3', 
+            '太陽は見上げる人を選ばない.mp3', 
+            '泣き地蔵.mp3', 
+            '置き手紙.mp3', 
+            '蝶々結び.mp3', 
+            '裸の勇者.mp3']; // List of files in rFolder
+        audioFiles = rFolderFiles.map(file => ({
+            name: file,
+            url: `./rFolder/${file}`
+        }));
+        displayFileList();
+    }
+
     fileInput.addEventListener('change', () => {
         const files = Array.from(fileInput.files);
         const newFiles = files.slice(0, maxFiles - audioFiles.length);
-        audioFiles = audioFiles.concat(newFiles);
+        audioFiles = audioFiles.concat(newFiles.map(file => ({
+            name: file.name,
+            url: URL.createObjectURL(file)
+        })));
 
         if (audioFiles.length > maxFiles) {
             audioFiles = audioFiles.slice(0, maxFiles);
@@ -51,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function playTrack(index) {
         if (index >= 0 && index < audioFiles.length) {
             currentTrackIndex = index;
-            const url = URL.createObjectURL(audioFiles[index]);
+            const url = audioFiles[index].url;
             audioPlayer.src = url;
             audioPlayer.play();
             playPauseButton.textContent = 'Pause';
