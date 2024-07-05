@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'We Found Love-Rihanna.mp3', 
             'Dragon Night.mp3', 
             'Stick Figure.mp3', 
-            'Wasted Nights.mp3', 
+            'Wasted Nights.mp3',
+            'when I was king.mp3',
             '太陽は見上げる人を選ばない.mp3', 
             '泣き地蔵.mp3', 
             '置き手紙.mp3', 
@@ -131,6 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
     prevButton.addEventListener('click', () => {
         if (currentTrackIndex > 0) {
             playTrack(currentTrackIndex - 1);
+        } else {
+            playTrack(audioFiles.length - 1); // Go to the last track
         }
     });
 
