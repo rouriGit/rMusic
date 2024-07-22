@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'Lonely Nights.mp3',
             'Rosemary.mp3',
             'Two.mp3',
+            'Bye.mp3',
+            'Lily.mp3',
             'アンマー.mp3',
             'ノアの方舟.mp3',
             '曖歌.mp3'
