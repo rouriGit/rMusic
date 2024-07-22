@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ]; // List of files in rFolder
         audioFiles = rFolderFiles.map(file => ({
             name: file,
-            url: `./rFolder/${file}`
+            url: `./rFolder/hiphop/${file}`
         }));
         displayFileList();
     }
