@@ -16,20 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function fetchMp3Files() {
         // Simulating fetching from rFolder (replace with actual server-side fetching logic if applicable)
         const rFolderFiles = [
-            'Love Song-Uru.mp3', 
-            'We Found Love-Rihanna.mp3', 
-            'Dragon Night.mp3', 
-            'Stick Figure.mp3', 
-            'Wasted Nights.mp3',
-            'when I was king.mp3',
-            '太陽は見上げる人を選ばない.mp3', 
-            '泣き地蔵.mp3', 
-            '置き手紙.mp3', 
-            '蝶々結び.mp3', 
-            '裸の勇者.mp3',
+            'HANABI.mp3',
             'High Land.mp3',
-            'Ghost.mp3',
-            'HANABI.mp3'
+            'Lonely Nights.mp3',
+            'Rosemary.mp3',
+            'Two.mp3',
+            'アンマー.mp3',
+            'ノアの方舟.mp3',
+            '曖歌.mp3'
         ]; // List of files in rFolder
         audioFiles = rFolderFiles.map(file => ({
             name: file,
